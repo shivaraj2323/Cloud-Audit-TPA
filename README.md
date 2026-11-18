@@ -28,10 +28,10 @@ All modular arithmetic is Python's built-in `pow` (no GMP, not constant-time). A
 ```
 pip install -r requirements.txt          # numpy, matplotlib
 python tests/selftest.py
-python run_all.py                        # full run, roughly 1.5 h on a 2.1 GHz single core
+python run_all.py                        # full run, roughly 1.5 h on a 2.6-2.8 GHz single core
 ```
 Timing experiments (1, 2a, 3) must run alone on the machine. Wall-clock timings depend on hardware; `results/env_info.json` records the machine used for the shipped results. Detection and trust-layer results are deterministic given the seeds.
 Seeds: Exp1 100+r, Exp2a 200+r, Exp2b `"300|frac|c|trial"`, Exp3 400+r, Exp4 1000-1029, Exp4b numpy seed 7, Exp5 numpy seed 9.
 
 ## Known limitations of the prototype
-Blocks are small integers; challenge coefficients are 16-bit; no CRT; the small-exponent batch test lacks the safe-prime / QR safeguards of a hardened protocol; the committee baseline abstracts only the audit-redundancy of [11]; no BLS instantiation; no network measurements.
+Blocks are small integers; challenge coefficients are 16-bit; no CRT; the small-exponent batch test lacks the safe-prime / QR safeguards of a hardened protocol; the committee baseline abstracts only the audit-redundancy of [6]; no BLS instantiation; no network measurements.
